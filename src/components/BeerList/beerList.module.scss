@@ -1,0 +1,16 @@
+.autoSizer {
+  height: 100% !important;
+  width: auto !important;
+}
+
+.listWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.autoSizerWrapper {
+  height: 80vh;
+  width: 100%;
+}
