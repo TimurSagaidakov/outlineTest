@@ -41,3 +41,8 @@ export type Beer = {
 };
 
 export type BeerList = Beer[];
+
+export type GetBeers = {
+  limit: number;
+  offset: number;
+};

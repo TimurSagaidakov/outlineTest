@@ -5,7 +5,8 @@ import InfiniteLoader from 'react-window-infinite-loader';
 import { PageLoader } from '../../componentsUI/PageLoader/PageLoader';
 
 import { useInfinityBeers } from '../../services/beerService/hooks/useInfinityBeers';
-import { Beer, BeerItemData } from './Beer/Beer';
+import { Beer } from './Beer/Beer';
+import { BeerItemData } from './Beer/types';
 import styles from './beerList.module.scss';
 import { BeerListUpdating } from './BeerListUpdating/BeerListUpdating';
 

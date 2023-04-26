@@ -1,17 +1,8 @@
-import { CSSProperties, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { BeerList } from '../../../services/beerService/types';
 import styles from './beer.module.scss';
+import { BeerProps } from './types';
 
-export type BeerItemData = {
-  list: BeerList;
-  setRowHeight: (index: number, size: number) => void;
-};
-export type BeerProps = {
-  data: BeerItemData;
-  index: number;
-  style: CSSProperties;
-};
 
 export const Beer = ({ index, data, style }: BeerProps) => {
   const { list, setRowHeight } = data;
