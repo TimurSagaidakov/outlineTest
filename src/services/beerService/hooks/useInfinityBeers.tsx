@@ -18,7 +18,13 @@ export const useInfinityBeers = () => {
     });
 
   const pages = data?.pages;
-  const pagesData = pages?.map((page) => page).flat() as BeerList | undefined;
+  const pagesData = pages?.reduce((res: BeerList, page: BeerList | undefined) => {
+    if (page) {
+      res.push(...page)
+    }
+
+    return res;
+  }, []);
 
   return {
     data: pagesData,

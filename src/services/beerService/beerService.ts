@@ -1,10 +1,5 @@
 import { apiClient } from '../apiClient/apiClient';
-import { BeerList } from './types';
-
-export type GetBeers = {
-  limit: number;
-  offset: number;
-};
+import { BeerList, GetBeers } from './types';
 
 export const getBeers = async ({ limit, offset }: GetBeers) => {
   if (typeof limit !== 'number') {
