@@ -3,11 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './beer.module.scss';
 import { BeerProps } from './types';
 
-
 export const Beer = ({ index, data, style }: BeerProps) => {
   const { list, setRowHeight } = data;
-  const [isImgLoaded, setIsImgLoaded] = useState<boolean>(false);
   const beer = list[index];
+
+  const [isImgLoaded, setIsImgLoaded] = useState<boolean>(!beer?.image_url);
   const rowRef = useRef<HTMLDivElement | null>(null);
 
   const onLoad = () => {
@@ -28,12 +28,15 @@ export const Beer = ({ index, data, style }: BeerProps) => {
     <div key={beer.id} style={style}>
       <div ref={rowRef} className={styles.beer}>
         <div className={styles.dFlex}>
-          <img
-            src={beer.image_url}
-            style={{ width: 50, ...(!isImgLoaded && { display: 'none' }) }}
-            onLoad={onLoad}
-            alt={`${beer.name}_pic`}
-          />
+          {beer.image_url && (
+            <img
+              src={beer.image_url}
+              style={{ width: 50, ...(!isImgLoaded && { display: 'none' }) }}
+              onLoad={onLoad}
+              alt={`${beer.name}_pic`}
+            />
+          )}
+
           {isImgLoaded ? (
             <div className={styles.beerDescription}>
               <div>
